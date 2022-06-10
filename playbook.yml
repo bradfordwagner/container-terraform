@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
   vars:
-    go_ver: 1.16.6
+    terraform_ver: 1.2.1
   roles:
-    - role: andrewrothstein.go-dev
+    - role: andrewrothstein.terraform

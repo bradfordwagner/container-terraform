@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
-  generateName: go-builder-image-
+  generateName: terraform-image-
 spec:
   podGC:
     strategy: OnPodSuccess # delete pods when workflow is successful
@@ -18,7 +18,7 @@ spec:
       - name: git_ref_type
       - name: git_version
       - name: repo_name
-        value: quay.io/bradfordwagner/go-builder
+        value: quay.io/bradfordwagner/terraform
       - name: upstream_repo
         value: quay.io/bradfordwagner/ansible
       - name: upstream_tag
@@ -29,7 +29,7 @@ spec:
         arguments:
           parameters:
           - name: git_repo
-            value: https://github.com/bradfordwagner/container-go-builder.git
+            value: https://github.com/bradfordwagner/container-terraform.git
           - name: git_version
             value: "{{ inputs.parameters.git_version }}"
           - name: upstream_repo
