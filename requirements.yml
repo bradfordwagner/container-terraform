@@ -1,2 +1,4 @@
 - role: andrewrothstein.terraform
   version: v2.2.90
+- role: andrewrothstein.git
+  version: v3.1.6

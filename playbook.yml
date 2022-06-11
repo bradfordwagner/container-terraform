@@ -4,3 +4,4 @@
     terraform_ver: 1.2.1
   roles:
     - role: andrewrothstein.terraform
+    - role: andrewrothstein.git
