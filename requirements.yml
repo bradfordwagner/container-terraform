@@ -2,3 +2,7 @@
   version: v2.2.90
 - role: andrewrothstein.git
   version: v3.1.6
+- role: andrewrothstein.miniconda
+  version: v6.1.5
+- role: andrewrothstein.azurecli
+  version: v1.0.18
