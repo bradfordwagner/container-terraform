@@ -7,6 +7,6 @@
     - role: andrewrothstein.git
     - role: andrewrothstein.miniconda
       miniconda_make_sys_default: True
-    - role: '{{ playbook_dir }}'
+    - role: andrewrothstein.azurecli
       conda_env_activate_for_login_shell: True
 

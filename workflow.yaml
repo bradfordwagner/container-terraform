@@ -49,7 +49,7 @@ spec:
           template: "{{inputs.parameters.git_ref_type}}"
         withItems:
         - { platform: ubuntu_bionic   , runtime_platforms: [linux/amd64] }
-        - { platform: ubuntu_focal    , runtime_platforms: [linux/amd64] }
-        - { platform: debian_buster   , runtime_platforms: [linux/amd64] }
-        - { platform: debian_bullseye , runtime_platforms: [linux/amd64] }
+#       - { platform: ubuntu_focal    , runtime_platforms: [linux/amd64] }
+#       - { platform: debian_buster   , runtime_platforms: [linux/amd64] }
+#       - { platform: debian_bullseye , runtime_platforms: [linux/amd64] }
 
