@@ -1,12 +1,15 @@
 ---
 - hosts: localhost
   vars:
-    terraform_ver: 1.2.1
+    hashi_apps:
+      - name: terraform
+        ver: 1.2.3
+    azurecli_ver: 2.37.0
   roles:
-    - role: andrewrothstein.terraform
     - role: andrewrothstein.git
-    - role: andrewrothstein.miniconda
-      miniconda_make_sys_default: True
-    - role: '{{ playbook_dir }}'
-      conda_env_activate_for_login_shell: True
+    - role: andrewrothstein.hashi
+  tasks:
+    - name: install azurecli with pip
+      pip:
+        name: azure-cli=={{ azurecli_ver }}
 
