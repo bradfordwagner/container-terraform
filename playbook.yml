@@ -3,10 +3,10 @@
   vars:
     terraform_ver: 1.2.1
   roles:
-    - role: andrewrothstein.terraform
-    - role: andrewrothstein.git
+#   - role: andrewrothstein.terraform
+#   - role: andrewrothstein.git
     - role: andrewrothstein.miniconda
       miniconda_make_sys_default: True
-    - role: andrewrothstein.azurecli
-      conda_env_activate_for_login_shell: True
+#   - role: andrewrothstein.azurecli
+#     conda_env_activate_for_login_shell: True
 
