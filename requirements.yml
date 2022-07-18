@@ -5,3 +5,5 @@
   version: v3.1.6
 - role: andrewrothstein.jq
   version: v1.0.8
+- role: andrewrothstein.yq
+  version: v2.0.39
