@@ -7,8 +7,10 @@
       - name: vault
         ver: 1.11.0
     azurecli_ver: 2.37.0
+    jq_ver: 1.6
   roles:
     - role: andrewrothstein.git
+    - role: andrewrothstein.jq
     - role: andrewrothstein.hashi
   tasks:
     - name: install azurecli with pip
