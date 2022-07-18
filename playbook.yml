@@ -4,6 +4,8 @@
     hashi_apps:
       - name: terraform
         ver: 1.2.3
+      - name: vault
+        ver: 1.11.0
     azurecli_ver: 2.37.0
   roles:
     - role: andrewrothstein.git
