@@ -18,4 +18,5 @@
     - name: install azurecli with pip
       pip:
         name: azure-cli=={{ azurecli_ver }}
-
+    - name: vault
+      shell: vault
