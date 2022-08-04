@@ -47,13 +47,13 @@ spec:
             value: "{{ item.ansible_args }}"
         templateRef:
           name: flavor-ansible-template
-          template: "{{inputs.parameters.git_ref_type}}"
+          template: "{{ inputs.parameters.git_ref_type }}"
         withItems:
-          - { platform: alpine_3.15    , ansible_args: [
-                {"platform": "linux/amd64", "ansible_extra_args": ""},
+#         - { platform: alpine_3.15    , ansible_args: [
+#               {"platform": "linux/amd64", "ansible_extra_args": ""},
 #               {"platform": "linux/arm64", "ansible_extra_args": {"go_arch": "arm64", "hashi_platform": {"arch": "arm64", "os": "linux"}, "goreleaser_arch": "arm64"}}
-              ]
-            }
+#             ]
+#           }
 #         - { platform: alpine_3.16    , ansible_args: [
 #               {"platform": "linux/amd64", "ansible_extra_args": ""},
 #               {"platform": "linux/arm64", "ansible_extra_args": {"go_arch": "arm64", "hashi_platform": {"arch": "arm64", "os": "linux"}, "goreleaser_arch": "arm64"}}
@@ -69,11 +69,11 @@ spec:
 #               {"platform": "linux/arm64", "ansible_extra_args": {"go_arch": "arm64", "hashi_platform": {"arch": "arm64", "os": "linux"}, "goreleaser_arch": "arm64"}}
 #             ]
 #           }
-#         - { platform: ubuntu_focal, ansible_args: [
+          - { platform: ubuntu_focal, ansible_args: [
 #               {"platform": "linux/amd64", "ansible_extra_args": ""},
-#               {"platform": "linux/arm64", "ansible_extra_args": {"go_arch": "arm64", "hashi_platform": {"arch": "arm64", "os": "linux"}, "goreleaser_arch": "arm64"}}
-#             ]
-#           }
+                {"platform": "linux/arm64", "ansible_extra_args": {"go_arch": "arm64", "hashi_platform": {"arch": "arm64", "os": "linux"}, "goreleaser_arch": "arm64"}}
+              ]
+            }
 #         - { platform: ubuntu_kinetic, ansible_args: [
 #               {"platform": "linux/amd64", "ansible_extra_args": ""},
 #               {"platform": "linux/arm64", "ansible_extra_args": {"go_arch": "arm64", "hashi_platform": {"arch": "arm64", "os": "linux"}, "goreleaser_arch": "arm64"}}
