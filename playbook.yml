@@ -19,4 +19,4 @@
       pip:
         name: azure-cli=={{ azurecli_ver }}
     - name: vault
-      shell: vault
+      shell: which vault
