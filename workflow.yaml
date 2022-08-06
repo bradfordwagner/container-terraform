@@ -61,3 +61,4 @@ spec:
                 {"platform": "linux/arm64", "ansible_extra_args": {"hashi_platform": {"arch": "arm64", "os": "linux"}, "yq_arch": "arm64" }}
               ]
             }
+
