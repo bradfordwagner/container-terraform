@@ -15,7 +15,7 @@
     - role: andrewrothstein.yq
     - role: andrewrothstein.hashi
   tasks:
-    - name: install libhdf5
+    - name: install azure-cli required packages
       apt:
         name: "{{ item }}"
         state: present
