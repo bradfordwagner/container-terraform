@@ -3,12 +3,13 @@
   vars:
     hashi_apps:
       - name: terraform
-        ver: 1.2.3
+        ver: 1.4.6
       - name: vault
-        ver: 1.11.0
-    azurecli_ver: 2.37.0
+        ver: 1.13.2
+    azurecli_ver: 2.48.1
     jq_ver: 1.6
-    yq_ver: 4.26.1
+    yq_ver: 4.33.3
+    go_ver: 1.20.3
   roles:
     - role: andrewrothstein.git
     - role: andrewrothstein.jq
