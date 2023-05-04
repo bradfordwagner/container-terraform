@@ -11,7 +11,7 @@ spec:
     - name: git_ref_type
       value: branches
     - name: git_version
-      value: feature/arm
+      value: main
   templates:
   - name: main
     inputs:
@@ -51,12 +51,12 @@ spec:
           name: flavor-ansible-template
           template: "{{ inputs.parameters.git_ref_type }}"
         withItems:
-          - { platform: debian_bookworm, ansible_args: [
+          - { platform: debian_bullseye, ansible_args: [
                 {"platform": "linux/amd64", "ansible_extra_args": ""},
                 {"platform": "linux/arm64", "ansible_extra_args": {"hashi_platform": {"arch": "arm64", "os": "linux"}, "yq_arch": "arm64" }}
               ]
             }
-          - { platform: ubuntu_lunar, ansible_args: [
+          - { platform: ubuntu_focal, ansible_args: [
                 {"platform": "linux/amd64", "ansible_extra_args": ""},
                 {"platform": "linux/arm64", "ansible_extra_args": {"hashi_platform": {"arch": "arm64", "os": "linux"}, "yq_arch": "arm64" }}
               ]
