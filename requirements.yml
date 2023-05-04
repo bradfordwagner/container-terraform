@@ -7,3 +7,5 @@
   version: v1.0.10
 - role: andrewrothstein.yq
   version: v2.1.13
+- role: andrewrothstein.go
+  version: v2.3.11
