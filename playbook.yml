@@ -15,6 +15,7 @@
     - role: andrewrothstein.jq
     - role: andrewrothstein.yq
     - role: andrewrothstein.hashi
+    - role: andrewrothstein.go
   tasks:
     - name: install azure-cli required packages
       apt:
