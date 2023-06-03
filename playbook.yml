@@ -7,9 +7,10 @@
       - name: vault
         ver: 1.13.2
     azurecli_ver: 2.48.1
-    jq_ver: 1.6
-    yq_ver: 4.33.3
     go_ver: 1.20.3
+    jq_ver: 1.6
+    kubernetes_helm_ver: v3.12.0
+    yq_ver: 4.33.3
   roles:
     - role: andrewrothstein.git
     - role: andrewrothstein.jq

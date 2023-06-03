@@ -9,3 +9,5 @@
   version: v2.1.13
 - role: andrewrothstein.go
   version: v2.3.11
+- role: andrewrothstein.kubernetes-helm
+  version: v2.0.30
