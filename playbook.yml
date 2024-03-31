@@ -10,12 +10,12 @@
     go_ver: 1.20.3
     jq_ver: 1.6
     yq_ver: 4.33.3
-  # roles:
-  #   - role: andrewrothstein.git
-  #   - role: andrewrothstein.jq
-  #   - role: andrewrothstein.yq
-  #   - role: andrewrothstein.hashi
-  #   - role: andrewrothstein.go
+  roles:
+    - role: andrewrothstein.git
+    - role: andrewrothstein.jq
+    - role: andrewrothstein.yq
+    - role: andrewrothstein.hashi
+    - role: andrewrothstein.go
   tasks:
     # - name: install azure-cli required packages
     #   apt:
