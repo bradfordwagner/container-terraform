@@ -3,9 +3,9 @@
   vars:
     hashi_apps:
       - name: terraform
-        ver: 1.4.6
+        ver: 1.5.7
       - name: vault
-        ver: 1.13.2
+        ver: 1.16.0
     azurecli_ver: 2.48.1
     go_ver: 1.20.3
     jq_ver: 1.6
@@ -17,23 +17,6 @@
     - role: andrewrothstein.hashi
     - role: andrewrothstein.go
   tasks:
-    # - name: install azure-cli required packages
-    #   apt:
-    #     name: "{{ item }}"
-    #     state: present
-    #   loop:
-    #     - gcc
-    #     - python3.9-dev
-    # - name: link /usr/local/bin/pip to /usr/bin/pip
-    #   file:
-    #     path: /usr/bin/pip
-    #     src: /usr/local/bin/pip
-    #     state: link
     - name: install azurecli with pip
       pip:
         name: azure-cli=={{ azurecli_ver }}
-    # - name: link /usr/local/bin/az to /ansible_env/bin/az
-    #   file:
-    #     path: /usr/local/bin/az
-    #     src: /ansible_env/bin/az
-    #     state: link
