@@ -6,10 +6,11 @@
         ver: 1.5.7
       - name: vault
         ver: 1.16.0
-    azurecli_ver: 2.48.1
+    # https://github.com/Azure/azure-cli/releases
+    azurecli_ver: 2.58.0
     go_ver: 1.20.3
-    jq_ver: 1.6
-    yq_ver: 4.33.3
+    jq_ver: 1.7.1
+    yq_version: 4.43.1
   roles:
     - role: andrewrothstein.git
     - role: andrewrothstein.jq
