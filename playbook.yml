@@ -8,6 +8,9 @@
         ver: 1.16.0
     # https://github.com/Azure/azure-cli/releases
     azurecli_ver: 2.58.0
+    # https://github.com/astral-sh/uv/releases
+    uv_ver: 0.13.6
+    azurecli_python: "3.13"
     jq_ver: 1.7.1
     yq_version: 4.43.1
   roles:
@@ -16,6 +19,29 @@
     - role: andrewrothstein.yq
     - role: andrewrothstein.hashi
   tasks:
-    - name: install azurecli with pip
-      pip:
-        name: azure-cli=={{ azurecli_ver }}
+    # The ansible base image (>= 6.7.0) is a uv-managed venv with no pip and no uv
+    # (uv is deleted after build), so ansible's pip module cannot work. Fetch uv
+    # for this step only, install azure-cli as an isolated uv tool, then remove uv.
+    - name: install azurecli with uv
+      environment:
+        UV_PYTHON_INSTALL_DIR: /opt/python
+        UV_PYTHON_PREFERENCE: only-managed
+        UV_TOOL_DIR: /opt/uv-tools
+        UV_TOOL_BIN_DIR: /usr/local/bin
+        UV_NO_CACHE: "1"
+      shell: |
+        set -ex
+        uv_dir=$(mktemp -d)
+        wget -qO- https://github.com/astral-sh/uv/releases/download/{{ uv_ver }}/uv-$(uname -m)-unknown-linux-musl.tar.gz | tar -xz -C ${uv_dir} --strip-components=1
+        # setuptools: azure-cli imports distutils, removed from python 3.12+
+        # psutil override: azure-cli pins psutil==5.9.8, which has no musl aarch64 wheel,
+        # so alpine builds it from source with a gcc that rejects the python build flags
+        echo 'psutil>=5.9.8' > ${uv_dir}/overrides.txt
+        ${uv_dir}/uv tool install --python {{ azurecli_python }} --with setuptools --overrides ${uv_dir}/overrides.txt azure-cli=={{ azurecli_ver }}
+        rm -rf ${uv_dir}
+      args:
+        executable: /bin/sh
+        creates: /usr/local/bin/az
+    - name: smoketest azurecli is on path
+      command: az version
+      changed_when: false
