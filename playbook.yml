@@ -9,6 +9,7 @@
     # https://github.com/Azure/azure-cli/releases
     azurecli_ver: 2.58.0
     # https://github.com/astral-sh/uv/releases
+    # renovate: datasource=github-releases depName=astral-sh/uv
     uv_ver: 0.13.6
     azurecli_python: "3.13"
     jq_ver: 1.7.1
